@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'bytebank-db'
+      MYSQL_USER: 'victor'
+      MYSQL_PASSWORD: '200694'
+      MYSQL_ROOT_PASSWORD: '200694'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-db:/var/lib/mysql
+volumes:
+  my-db:
